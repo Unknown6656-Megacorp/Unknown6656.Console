@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>net9.0</TargetFramework>
 
@@ -29,15 +29,15 @@
 
         <Authors>Unknown6656</Authors>
         <Company>Unknown6656</Company>
-        <Product>Unknown6656.Console by Unknown6656</Product>
+        <Product>Unknown6656.Terminal by Unknown6656 (formerly Unknown6656.Console)</Product>
         <Description>A drop-in replacement for the default .NET "System.Console" class which includes many useful functionalities.</Description>
         <Copyright>Copyright © 2020-$([System.DateTime]::Today.ToString(yyyy)), unknown6656</Copyright>
-        <PackageProjectUrl>https://github.com/Unknown6656-Megacorp/Unknown6656.Console</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/Unknown6656-Megacorp/Unknown6656.Console</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/Unknown6656-Megacorp/Unknown6656.Terminal</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Unknown6656-Megacorp/Unknown6656.Terminal</RepositoryUrl>
         <PackageIcon>unknown6656-logo-1024.png</PackageIcon>
         <PackageTags>unknown6656;core;console;VT520;VT100;VT420;ansi;color;ascii;cli;terminal;cmd;sh;bash;art;library;runtime;os;internal;native</PackageTags>
 
-        <PackageId>Unknown6656.Console</PackageId>
+        <PackageId>Unknown6656.Terminal</PackageId>
         <IncludeSymbols>true</IncludeSymbols>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
@@ -60,6 +60,9 @@
     </ItemGroup>
     <ItemGroup>
       <Compile Remove="ColorQuantizer.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="ColorQuantizer.cs" />
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />

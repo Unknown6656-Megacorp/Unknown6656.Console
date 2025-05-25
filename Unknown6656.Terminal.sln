@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "util", "util", "{372BF5DE-7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VersionIncrementer", "util\VersionIncrementer.csproj", "{C2517A40-97B9-40E2-BC43-C1C303A32FDA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{37752D87-56B2-46CC-BD4A-E8508ED06E6E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{C2517A40-97B9-40E2-BC43-C1C303A32FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2517A40-97B9-40E2-BC43-C1C303A32FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2517A40-97B9-40E2-BC43-C1C303A32FDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37752D87-56B2-46CC-BD4A-E8508ED06E6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37752D87-56B2-46CC-BD4A-E8508ED06E6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37752D87-56B2-46CC-BD4A-E8508ED06E6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37752D87-56B2-46CC-BD4A-E8508ED06E6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F9F0A0C9-B599-40C7-BDEA-A5ACE680BDB3} = {133E2CBA-8140-4BC7-B1ED-1BA63F9B9C0F}
 		{C2517A40-97B9-40E2-BC43-C1C303A32FDA} = {372BF5DE-7592-4026-B188-80772A4D1C03}
+		{37752D87-56B2-46CC-BD4A-E8508ED06E6E} = {372BF5DE-7592-4026-B188-80772A4D1C03}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DE4E9B3E-D004-40AC-9A12-4D8BDDA9E5F5}
