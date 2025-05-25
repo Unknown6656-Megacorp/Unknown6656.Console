@@ -1,10 +1,10 @@
 ################################################################
-# Auto-generated 2025-03-09 15:59:15.106                       #
+# Auto-generated 2025-05-25 10:24:14.193                       #
 # ANY CHANGES TO THIS DOCUMENT WILL BE LOST UPON RE-GENERATION #
 ################################################################
 #
-# git commit: ba15c12486bcddb74aad39f70ae2c179d80a865f
-version: 1.5.436.8968
+# git commit: 0850e1f1329f9d2aea828bca27d78e2496b388da
+version: 1.5.445.9045
 image: Visual Studio 2022
 configuration: Release
 install:
@@ -13,14 +13,14 @@ install:
     - ps: '.\install-dotnet.ps1  -Version "9.0.100-rc.1.24452.12" -InstallDir "$env:DOTNET_INSTALL_DIR" -NoPath'
     - ps: $env:Path += ";$env:DOTNET_INSTALL_DIR"
 before_build:
-    #- cmd: nuget restore "Unknown6656.Console.sln"
+    #- cmd: nuget restore "Unknown6656.Terminal.sln"
     - cmd: dotnet --info
     - cmd: echo %PATH%
     - cmd: dotnet clean
     - cmd: dotnet restore
     #- cmd: dotnet build --configuration Release
 build:
-    project: "Unknown6656.Console.sln"
+    project: "Unknown6656.Terminal.sln"
     verbosity: minimal
 notifications:
     - provider: GitHubPullRequest

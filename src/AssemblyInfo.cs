@@ -1,15 +1,15 @@
 
 //////////////////////////////////////////////////////////////////////////
-// Auto-generated 2025-03-09 15:59:15.106                               //
+// Auto-generated 2025-05-25 10:24:14.193                               //
 // ANY CHANGES TO THIS DOCUMENT WILL BE LOST UPON RE-GENERATION         //
 //////////////////////////////////////////////////////////////////////////
 
 using System.Reflection;
 using System;
 
-[assembly: AssemblyVersion("1.5.436.8968")]
-[assembly: AssemblyFileVersion("1.5.436.8968")]
-[assembly: AssemblyInformationalVersion("v.1.5.436.8968, commit: ba15c12486bcddb74aad39f70ae2c179d80a865f")]
+[assembly: AssemblyVersion("1.5.445.9045")]
+[assembly: AssemblyFileVersion("1.5.445.9045")]
+[assembly: AssemblyInformationalVersion("v.1.5.445.9045, commit: 0850e1f1329f9d2aea828bca27d78e2496b388da")]
 [assembly: AssemblyCompany("Unknown6656")]
 [assembly: AssemblyCopyright("Copyright © 2020 - 2025, Unknown6656")]
 [assembly: AssemblyProduct("Unknown6656.Terminal by Unknown6656")]
@@ -37,11 +37,11 @@ public static class __module__
     /// <summary>
     /// The library's current version.
     /// </summary>
-    public static Version? LibraryVersion { get; } = Version.Parse("1.5.436.8968");
+    public static Version? LibraryVersion { get; } = Version.Parse("1.5.445.9045");
     /// <summary>
     /// The Git hash associated with the current build.
     /// </summary>
-    public const string GitHash = "ba15c12486bcddb74aad39f70ae2c179d80a865f";
+    public const string GitHash = "0850e1f1329f9d2aea828bca27d78e2496b388da";
     /// <summary>
     /// The name of the GitHub repository associated with <see cref="RepositoryURL"/>.
     /// </summary>
@@ -51,7 +51,7 @@ public static class __module__
     /// </summary>
     public const string RepositoryURL = "https://github.com/Unknown6656-Megacorp/Unknown6656.Terminal";
     /// <summary>
-    /// The date and time of the current build (2025-03-09 15:59:15.106).
+    /// The date and time of the current build (2025-05-25 10:24:14.193).
     /// </summary>
-    public static DateTime DateBuilt { get; } = DateTime.FromFileTimeUtc(0x01db9103d3276387L);
+    public static DateTime DateBuilt { get; } = DateTime.FromFileTimeUtc(0x01dbcd4e661ddaf4L);
 }

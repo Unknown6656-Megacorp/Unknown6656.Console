@@ -36,6 +36,7 @@ public static unsafe partial class Console
     internal const string _HTS = "\eH";
     internal const string _RI = "\eM";
     internal const string _PM = "\e^";
+    internal const string _BEL = "\a";
 
 
     /// <summary>
@@ -95,25 +96,6 @@ public static unsafe partial class Console
     public static bool WindowAutoResizeModeEnabled
     {
         set => SetVT520Bit(98, value);
-    }
-
-    public static bool IsWindowFramed
-    {
-        // get maybe via private DEC mode?
-        set => SetVT520Bit(111, value);
-    }
-
-    public static ConsoleColor WindowFrameBackgroundColor
-    {
-        set => SetWindowFrameColor(value);
-    }
-
-    [SupportedOSPlatform(OS.LNX)]
-    [SupportedOSPlatform(OS.MAC)]
-    [SupportedOSPlatform(OS.MACC)]
-    public static (ConsoleColor Foreground, ConsoleColor Background) WindowFrameColors
-    {
-        set => SetWindowFrameColor(value.Foreground, value.Background);
     }
 
     public static ConsoleCursorShape CursorShape
@@ -417,7 +399,11 @@ public static unsafe partial class Console
     /// <summary>
     /// Clears the entire console screen and performs a hard reset of the console, as well as all cursor and graphic renditions and attributes.
     /// </summary>
-    public static void HardResetAndFullClear() => Write($"{_CSI}m{_CSI}3J{_CSI}!p\ec");
+    public static void HardResetAndFullClear()
+    {
+        Write($"{_CSI}m{_CSI}3J{_CSI}!p\ec");
+        SetWindowProgressbar(null);
+    }
 
     /// <summary>
     /// Resets all graphic renditions to their default values.
@@ -579,35 +565,6 @@ public static unsafe partial class Console
     }
 
     #endregion
-
-#pragma warning disable CA1416 // Validate platform compatibility
-    /// <summary>
-    /// Sets the foreground color of the window frame.
-    /// </summary>
-    /// <param name="background">The terminal window frame background color. The color must be a system color (i.e., one of <see cref="ConsoleColor"/>'s static members, or an instance of <see cref="sysconsolecolor"/>).</param>
-    /// <exception cref="ArgumentOutOfRangeException">Thrown if a <paramref name="background"/> is not a system color.</exception>
-    public static void SetWindowFrameColor(ConsoleColor background) => SetWindowFrameColor(ConsoleColor.Black, background);
-#pragma warning restore CA1416
-
-    /// <summary>
-    /// Sets the foreground and background colors of the window frame.
-    /// This method is currently only supported on Linux and macOS.
-    /// </summary>
-    /// <param name="foreground">The terminal window frame foreground color. The color must be a system color (i.e., one of <see cref="ConsoleColor"/>'s static members, or an instance of <see cref="sysconsolecolor"/>).</param>
-    /// <param name="background">The terminal window frame background color. The color must be a system color (i.e., one of <see cref="ConsoleColor"/>'s static members, or an instance of <see cref="sysconsolecolor"/>).</param>
-    /// <exception cref="ArgumentOutOfRangeException">Thrown if a <paramref name="foreground"/> and/or <paramref name="background"/> is not a system color.</exception>
-    [SupportedOSPlatform(OS.LNX)]
-    [SupportedOSPlatform(OS.MAC)]
-    [SupportedOSPlatform(OS.MACC)]
-    public static void SetWindowFrameColor(ConsoleColor foreground, ConsoleColor background)
-    {
-        if (background.ToSystemColor() is not sysconsolecolor bg)
-            throw new ArgumentOutOfRangeException(nameof(background), $"The specified background color '{background}' is not supported.");
-        else if (foreground.ToSystemColor() is not sysconsolecolor fg)
-            throw new ArgumentOutOfRangeException(nameof(foreground), $"The specified foreground color '{foreground}' is not supported.");
-        else
-            Write($"{_CSI}2;{(int)fg};{(int)bg},|");
-    }
 
 
     #region WRITE FUNCTIONS
